@@ -1,0 +1,276 @@
+:root {
+  --bg-body:rgb(240, 241, 243);
+  --bg-quadro:#eeeef0;
+  --bg-container:#ffffff;
+  --bg-nav-select:rgb(91, 157, 243);
+
+  --color-operador:#9a6e3a;
+  --color-string:#669900;
+  --color-pontuação:#999;
+  --color-function:#dd4a68;
+  --color-numero:#905;
+  --color-console:#708090;
+  --color-keyword:#07a;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  display: flex;
+  justify-content:center;
+  
+  font-family: 'Lato', 'sans-serif';
+  
+  background-color:var(--bg-body);
+
+  background: rgb(224,229,241);
+  background: linear-gradient(90deg, rgba(224,229,241,0.5046393557422969) 0%, rgba(255,255,255,1) 50%, rgba(224,229,241,0.5046393557422969) 100%);
+
+}
+
+.container {
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  background-color:var(--bg-container);
+  
+  padding: 15px 30px;
+  width: min(90vw, 800px);
+  margin: 0;
+}
+.titulo{
+  text-align: center;
+}
+.titulo h1{
+  padding: 20px 0;
+  font-size: 50px;
+}
+.titulo h3{
+  padding: 20px 10px;
+  font-size: 24px;
+  
+  font-weight:300;
+}
+.metodo{
+  padding: 10px 0;
+}
+.metodo h3{
+  font-size: 24px;
+  padding: 15px 10px;
+}
+.metodo p{
+  font-size: 20px;
+  padding: 15px 0 20px;
+}
+
+.quadro{
+  background-color:var(--bg-quadro);
+  padding: 15px;
+  
+  display:block;
+  
+  gap:25px;
+  
+  margin:10px 20px 40px;
+}
+.unshift{
+  margin:0 20px 30px ;
+  
+}
+span.operador{
+  color: var(--color-operador);
+}
+span.numero{
+  color: var(--color-numero);
+}
+span.pontuacao{
+  color: var(--color-pontuação);
+  
+}
+span.string{
+  color: var(--color-string);
+  
+}
+span.function{
+  color: var(--color-function);
+  
+}
+span.keyword{
+  color: var(--color-keyword);
+  
+}
+.console{
+  color: var(--color-console);
+  padding:10px;
+  margin-bottom: 10px;
+}
+.execute{
+  padding-top:20px;
+  
+}
+.form{
+  padding-top:20px;
+}
+button{
+  padding: 5px 30px;
+}
+input{
+  padding: 5px 10px;
+}
+p{
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  margin: 0 ; 
+  padding:10px 0 ; 
+}
+.obs{
+  padding: 10px !important;
+  margin: 20px 0;
+  border-left: 3px solid rgb(4, 252, 99);
+  background:rgba(4, 252, 99, 0.219);
+  
+  font-style: italic;
+  font-size: 18px;
+}
+.obs span{
+  font-size: 16px;
+  font-weight: bold;
+  
+}
+ul span{
+  /* color:#708090; */
+  font-weight: bold;
+}
+li{
+  font-size: 16px;
+  padding:10px;
+  margin-left: 30px;
+}
+.group{
+  margin-left: 50px;
+}
+nav{
+  position: fixed;
+  left:0;
+  top: 8px;
+  
+}
+.nav-container{
+  display: flex;
+  flex-direction: column;
+}
+.nav-container a{
+  text-decoration: none;
+  padding:9px 20px;
+ color:#000;
+ border-radius: 3px;
+ text-align:left;
+ margin-left: 10px;
+}
+.nav-container a:hover{
+  color:rgb(181, 196, 216);
+}
+.nav-container a:active{
+  background-color:var(--bg-nav-select)
+}
+.show-menu{
+  display: none;
+}
+.show-menu .active{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+}
+
+
+.nav-mobile{
+  display:flex;
+  flex-direction: column;
+}
+.btn-mobile {
+ display:none;
+}
+.btn-mobile img{
+  width: 30px;
+  height: 30px;
+}
+
+[data-anime]{
+  background: var(--bg-body);
+}
+
+
+@media screen and (max-width: 530px) {
+  nav {
+    display: none;
+    
+  }
+  .container{
+    padding: 0;
+  }
+  h3, p{
+    margin:0 10px;
+    font-size: 16px
+  }
+  
+  .active{
+    display:flex;
+    flex-direction: column;
+  }
+  .form {
+    text-align: center;
+    
+  }
+  .form button{
+    margin-top:5px;
+    
+  }
+}
+.barra-fechamento{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+.btn-close{
+  width: 25px;
+  height: 25px;
+}
+@media screen and (max-width: 880px) {
+  nav {
+    display: none;
+    
+  }
+  .btn-mobile{
+    display: flex;
+    justify-content: flex-end;
+    padding:10px;
+    text-decoration: none;
+  }
+  .nav-mobile{
+    display: flex;
+    text-align: center;
+    padding:10px;
+    text-decoration: none;
+  }
+  .nav-mobile a{
+    padding:10px;
+    text-decoration: none;
+    color: var(--bg-nav-select)
+  }
+  
+}
+@media screen and (max-width: 1024px) {
+  .nav-container a {
+    margin-left: 0;
+    padding: 7px 10px;
+    top:4px
+    
+  }
+}

@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="script.js"></script> -->
+    
+    <title>Manipulação de Arrays</title>
+  </head>
+  <body>
+    
+    <section class="container">
+    <!-- ---------------------------- Nav Mobile --------------------------------- -->
+    
+      <div class="show-menu">
+        <div class="nav-mobile">
+          <div class="barra-fechamento">
+            <img src="./img/close.png" alt="" id="fecha" class="btn-close" onclick="fechaMenu()">
+            
+          </div>
+          
+          <a onclick="fechaMenu()" id="nav-push" href="#push">push<push</a>
+          <a onclick="fechaMenu()" id="nav-pop"  href="#pop">pop</a>
+          <a onclick="fechaMenu()" id="nav-shift"  href="#shift">shift</a>
+          <a onclick="fechaMenu()" id="nav-unshift"  href="#unshift">unshift</a>
+          <a onclick="fechaMenu()" id="nav-splice"  href="#splice">splice</a>
+          <a onclick="fechaMenu()" id="nav-slice"  href="#slice">slice</a>
+          <a onclick="fechaMenu()" id="nav-split"  href="#split">split</a>
+          <a onclick="fechaMenu()" id="nav-indexOf"  href="#indexOf">indexOf</a>
+          <a onclick="fechaMenu()" id="nav-lastIndexOf"  href="#lastIndexOf">lastIndexOf</a>
+          <a onclick="fechaMenu()" id="nav-filter"  href="#filter">filter</a>
+          <a onclick="fechaMenu()" id="nav-map"  href="#map">map</a>
+          <a onclick="fechaMenu()" id="nav-reduce"  href="#reduce">reduce</a>
+          <a onclick="fechaMenu()" id="nav-forEach"  href="#forEach">forEach</a>
+          <a onclick="fechaMenu()" id="nav-every"  href="#every">every</a>
+          <a onclick="fechaMenu()" id="nav-some"  href="#some">some</a>
+          <a onclick="fechaMenu()" id="nav-includes"  href="#includes">includes</a>
+          
+        </div>
+      
+      </div>
+   
+    <!-- ---------------------------- Nav Desktop --------------------------------- -->
+    
+    <nav>
+      <div class="nav-container">
+        <a id="nav-push" href="#push">push<push</a>
+        <a id="nav-pop"  href="#pop">pop</a>
+        <a id="nav-shift"  href="#shift">shift</a>
+        <a id="nav-unshift"  href="#unshift">unshift</a>
+        <a id="nav-splice"  href="#splice">splice</a>
+        <a id="nav-slice"  href="#slice">slice</a>
+        <a id="nav-split"  href="#split">split</a>
+        <a id="nav-indexOf"  href="#indexOf">indexOf</a>
+        <a id="nav-lastIndexOf"  href="#lastIndexOf">lastIndexOf</a>
+        <a id="nav-filter"  href="#filter">filter</a>
+        <a id="nav-map"  href="#map">map</a>
+        <a id="nav-reduce"  href="#reduce">reduce</a>
+        <a id="nav-forEach"  href="#forEach">forEach</a>
+        <a id="nav-every"  href="#every">every</a>
+        <a id="nav-some"  href="#some">some</a>
+        <a id="nav-includes"  href="#includes">includes</a>
+        
+      </div>
+    </nav>
+      <div class="btn-mobile"  onclick="toggleMenu()">
+        <img src="./img/menu.jpg" alt="">
+      </div>
+      <div class="titulo">
+        <h1>Estudo de manipulação de Arrays</h1>
+        <h3>
+          Nesse artigo mostrarei os principais métodos de manipular um array
+        </h3>
+      </div>
+      <div class="conteudo">
+        
+        <!---------------------------------- PUSH ------------------------------->
+        
+        <div class="metodo">
+          <h3 id="push" data-anime="animation">Push( )</h3>
+          <p>
+            Este método adiciona itens ao final de um array e altera o array
+            original.
+          </p>
+        </div>
+        <div class="quadro">
+          <div class="exemplo">
+            
+            <code>
+                
+                <span class="keyword">Let </span>navegadores
+                <span class="operador"> = </span>
+                <span class="pontuacao">[</span>
+                <span class="string">'chrome'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'firefox'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'edge'</span>
+                <span class="pontuacao">]</span>
+                
+                <br>
+                
+                <span class="variavel">navegadores.</span>
+                <span class="function">push </span>
+                <span class="pontuacao">(</span>
+                <span class="string">'safari'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'opera mini'</span>
+                <span class="pontuacao">)</span>
+                <br>
+                console.
+                <span class="function">log</span>
+                <span class="pontuacao">(</span>
+                navegadores
+                <span class="pontuacao">)</span>
+                <br>
+                <span class="console">
+                  // [ 'chrome', 'firefox', 'edge', 'safari', 'opera mini' ]
+                </span>
+            </code>
+              </div>
+              <br>
+              <hr>
+              <div class="execute">
+                
+                <span class="keyword">Let </span>
+                <span class="variavel">sacola </span>
+                <span class="operador"> = </span>
+                
+                <span class="pontuacao">[</span>
+                
+                <span id="teste"></span>
+                
+                <span class="pontuacao">]</span>
+                
+                <br />
+                <div class="form">
+                  
+                  <input
+                  type="text"
+                  placeholder="Insira os itens aqui"
+                  id="itens"
+                  name="itens"
+                  onfocus="this.value='';"
+                  />
+                  <button onclick="inserir()" type="button">Push</button>
+                </div>
+              </div>
+            </code>
+          </div>
+        </div>
+        <!------------------------------------ POP ------------------------------------->
+        <div class="conteudo">
+          <div class="metodo">
+          <h3 id="pop" data-anime="animation">Pop( )</h3>
+          <p>
+            Este método remove o último item de um array e o retorna.
+          </p>
+        </div>
+        <div class="quadro">
+          <div class="exemplo">
+            
+            <code>
+              
+              <span class="keyword">Let </span>navegadores
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">'chrome'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'firefox'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'edge'</span>
+              <span class="pontuacao">]</span>
+              
+              <br>
+              
+              <span class="variavel">navegadores.</span>
+              <span class="function">pop </span>
+              <span class="pontuacao">(</span>
+              <span class="pontuacao">)</span>
+              <span class="console"> // "edge"</span>
+              <br>
+              console.
+              <span class="function">log</span>
+              <span class="pontuacao">(</span>
+              navegadores
+              <span class="pontuacao">)</span>
+              <br>
+              <span class="console">
+                // ['chrome', 'firefox']
+              </span>
+              
+            </div>
+            <br>
+            <hr>
+            <div class="execute">
+              
+              <span class="keyword">Let </span>
+              <span class="variavel">sacola </span>
+              <span class="operador"> = </span>
+              
+              <span class="pontuacao">[</span>
+              
+              <span id="itensPop"></span>
+              
+              <span class="pontuacao">]</span>
+              
+              <br />
+              <div class="form">
+                
+                <button onclick="retirar()" type="button">Pop</button>
+              </div>
+            </div>
+          </code>
+        </div>
+      </div>
+      <!------------------------------------ SHIFT ------------------------------------->
+      <div class="conteudo">
+        <div class="metodo">
+          <h3 id="shift" data-anime="animation">Shift( )</h3>
+          <p>
+            Este método remove o primeiro item de um array e o retorna.
+          </p>
+        </div>
+        <div class="quadro">
+          <div class="exemplo">
+            
+            <code>
+              
+              <span class="keyword">Let </span>navegadores
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">'chrome'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'firefox'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'edge'</span>
+              <span class="pontuacao">]</span>
+                
+                <br>
+                
+                <span class="variavel">navegadores.</span>
+                <span class="function">shift </span>
+                <span class="pontuacao">(</span>
+                <span class="pontuacao">)</span>
+                <span class="console"> // "edge"</span>
+                <br>
+                console.
+                <span class="function">log</span>
+                <span class="pontuacao">(</span>
+                navegadores
+                <span class="pontuacao">)</span>
+                <br>
+                <span class="console">
+                  // ['chrome', 'firefox']
+                </span>
+                
+              </div>
+              <br>
+              <hr>
+              <div class="execute">
+                
+                <span class="keyword">Let </span>
+                <span class="variavel">sacola </span>
+                <span class="operador"> = </span>
+                
+                <span class="pontuacao">[</span>
+                
+                <span id="itensShift"></span>
+                
+                <span class="pontuacao">]</span>
+                
+                <br />
+                <div class="form">
+                  
+                  <button onclick="retirarPrimeiro()" type="button">Shift</button>
+                </div>
+              </div>
+            </code>
+          </div>
+        </div>
+      <!------------------------------------ UNSHIFT ------------------------------------->
+      <div class="conteudo">
+        <div class="metodo">
+          <h3 id="unshift" data-anime="animation">Unshift( )</h3>
+          <p>
+            Este método adiciona um ou vários itens ao início de um array e altera o array original.
+          </p>
+        </div>
+        <div class="quadro unshift" >
+          <div class="exemplo">
+            
+            <code>
+              
+              <span class="keyword">Let </span>navegadores
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">'chrome'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'firefox'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'edge'</span>
+              <span class="pontuacao">]</span>
+              
+              <br>
+                
+                <span>navegadores.</span>
+                <span class="function">unshift </span>
+                <span class="pontuacao">(</span>
+                <span class="string">'safari'</span>
+                <span class="pontuacao">)</span>
+                <br>
+                console.
+                <span class="function">log</span>
+                <span class="pontuacao">(</span>
+                navegadores
+                <span class="pontuacao">)</span>
+                <br>
+                <span class="console">
+                  // [ 'safari', 'chrome', 'firefox', 'edge',]
+                </span>
+                
+                
+              </div>
+              <br>
+              <hr>
+              <div class="execute">
+                
+                <span class="keyword">Let </span>
+                <span class="variavel">sacola </span>
+                <span class="operador"> = </span>
+                
+                <span class="pontuacao">[</span>
+                
+                <span id="itensUnshift"></span>
+                
+                <span class="pontuacao">]</span>
+                
+                <br />
+                <div class="form">
+                 
+                    <input
+                    type="text"
+                    placeholder="Insira os itens aqui"
+                    id="itensUn"
+                    name="itensUn"
+                    onfocus="this.value='';"
+                    />
+                    
+                    <button onclick="inserirUnshift()" type="button">Unshift</button>
+                  </div>
+                </div>
+            </code>
+          </div>
+          <p class="obs">É possível adicionar vários itens ao mesmo tempo</p>
+        </div>
+        
+        <!------------------------------------ SPLICE ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="splice" data-anime="animation">Splice( )</h3>
+            <p>
+              Este método altera um array, adicionando, removendo e inserindo elementos.
+            </p>
+          </div>
+          <div>
+            <p>A sintaxe é:</p>
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <p style="margin: 10px 0;">array.splice(indice[, contagemDeExclusao, elemento1, ..., elementoN])</p>
+                  
+                  
+                </code>
+              </div>
+              
+            </div>
+            <div>
+              <ul>
+                <li><span>indice</span> aqui é o ponto inicial de remoção de elementos do array</li>
+                <li><span>contagemDeExclusao</span> é o número de elementos a serem excluídos do array a partir do índice</li>
+                <li><span>elemento1, ..., elementoN</span> são os elementos a serem adicionados</li>
+              </ul>
+          </div>
+          <div class="subTitulo">
+            <h3>Remoção de itens</h3>
+            <p class="obs">depois de executar splice(), ele retorna o array com os itens removidos e os remove do array original.</p>
+          </div>
+          <div class="quadro" >
+            <div class="exemplo">
+              
+              <code>
+                
+                <span class="keyword">Let </span>cores
+                <span class="operador"> = </span>
+                <span class="pontuacao">[</span>
+                <span class="string">'azul'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'vermelho'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'laranja'</span>
+                <span class="pontuacao">]</span>
+                
+                <br>
+                
+                <span>cores.</span>
+                <span class="function">splice </span>
+                <span class="pontuacao">(</span>
+                <span class="numero">0, 2</span>
+                <span class="pontuacao">)</span>
+                <br>
+                console.
+                <span class="function">log</span>
+                <span class="pontuacao">(</span>
+                cores
+                <span class="pontuacao">)</span>
+                <span class="console">
+                  // [ "laranja"]
+                </span>
+                <br>
+                <span class="console">
+                  // exclui [ "azul", "vermelho"]
+                </span>
+              </div>
+            </code>
+            </div>
+            <div>
+              
+              <p class="obs"><span>Observação: </span> contagemDeExclusao não inclui o último índice do intervalo.</p>
+              <br>
+              <p>Se o segundo parâmetro não for declarado, todos os elementos a começar do índice fornecido serão removidos do array:</p>
+            </div>
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <span class="keyword">Let </span>cores
+                  <span class="operador"> = </span>
+                  <span class="pontuacao">[</span>
+                  <span class="string">'azul'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'vermelho'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'laranja'</span>
+                  <span class="pontuacao">]</span>
+                  
+                  <br>
+                  
+                  <span>cores.</span>
+                  <span class="function">splice </span>
+                  <span class="pontuacao">(</span>
+                  <span class="numero">2</span>
+                  <span class="pontuacao">)</span>
+                  <br>
+                  console.
+                  <span class="function">log</span>
+                  <span class="pontuacao">(</span>
+                  cores
+                  <span class="pontuacao">)</span>
+                  <span class="console">
+                    //  [ "azul", "vermelho"]
+                  </span>
+                  <br>
+                  <span class="console">
+                    // exclui [ "laranja"]
+                  </span>
+                </code>
+              </div>
+            </div>
+            <p >No próximo exemplo, removeremos 3 elementos do array e os substituiremos por mais itens:
+              
+            </p>
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <span class="keyword">Let </span>agenda
+                  <span class="operador"> = </span>
+                  <span class="pontuacao">[</span>
+                  <span class="string">'Eu'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'tenho'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'um'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'compromisso'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'amanhã'</span>
+                  <span class="pontuacao">]</span>
+                  
+                  <br>
+                  <span class="console">
+                    // remove os 4 primeiros elementos e os substitui por outros
+                  </span>
+                  <br>
+                  
+                  <span>agenda.</span>
+                  <span class="function">splice </span>
+                  <span class="pontuacao">(</span>
+                  <span class="numero">0</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">4</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'Nós'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'vamos'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'nadar'</span>
+                  <span class="pontuacao">)</span>
+                  <br>
+                  console.
+                  <span class="function">log</span>
+                  <span class="pontuacao">(</span>
+                  agenda
+                  <span class="pontuacao">)</span>
+                  <br>
+                  <span class="console">
+                    //  ["Nós", "vamos", "nadar", "amanhã"]
+                  </span>
+                  
+                </code>
+              </div>
+            </div>
+            <div class="subTitulo">
+              <h3>Adição de itens</h3>
+              <p>Para adicionar itens, precisamos definir contagemDeExclusao como zero</p>
+            </div>
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <span class="keyword">Let </span>agenda
+                  <span class="operador"> = </span>
+                  <span class="pontuacao">[</span>
+                  <span class="string">'Eu'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'tenho'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'um'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'compromisso'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'com'</span>
+                  <span class="pontuacao">]</span>
+                  
+                  <br>
+                  <span class="console">
+                    // adiciona 3 novos elementos ao array
+                  </span>
+                  <br>
+                  
+                  <span>agenda.</span>
+                  <span class="function">splice </span>
+                  <span class="pontuacao">(</span>
+                  <span class="numero">5</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">0</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'alguns'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'clientes'</span>
+                  <span class="pontuacao">,</span>
+                  <span class="string">'amanhã'</span>
+                  <span class="pontuacao">)</span>
+                  <br>
+                  console.
+                  <span class="function">log</span>
+                  <span class="pontuacao">(</span>
+                  agenda
+                  <span class="pontuacao">)</span>
+                  <br>
+                  <span class="console">
+                    // ["Eu", "tenho", "um", "compromisso", "com", "alguns", "clientes", "amanhã"]
+                  </span>
+                  
+                </code>
+              </div>
+            </div>
+        <!------------------------------------ SLICE ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="slice" data-anime="animation">Slice( )</h3>
+            <p class="obs">
+              Este método se assemelha a splice(), mas é muito diferente. Ele retorna subarrays em vez de substrings.
+            </p>
+          </div>
+          <div>
+            
+            <p >Este método copia uma parte dada de um array e retorna aquela parte copiada como um novo array. Ele não altera o array original.</p>
+
+            <p >A sintaxe é:</p>
+            
+          </div>
+            
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <p style="margin:0">array.slice(início, fim)</p>
+                  
+                </code>
+              </div>
+              
+            </div>
+
+            <p >Aqui temos um exemplo básico:</p>
+            
+            <div class="quadro" >
+              <div class="exemplo">
+                
+                <code>
+                  
+                  <span class="keyword">Let </span>numeros
+                  <span class="operador"> = </span>
+                  <span class="pontuacao">[</span>
+                  <span class="numero">1</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">2</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">3</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">4</span>
+                  
+                  <span class="pontuacao">]</span>
+                  
+                  <br>
+                  
+                  <span>numeros.</span>
+                  <span class="function">slice </span>
+                  <span class="pontuacao">(</span>
+                  <span class="numero">0</span>
+                  <span class="pontuacao">,</span>
+                  <span class="numero">3</span>
+                  <span class="pontuacao">)</span>
+                  <br>
+                  console.
+                  <span class="function">log</span>
+                  <span class="pontuacao">(</span>
+                  numeros
+                  <span class="pontuacao">)</span>
+                  <br>
+                  <span class="console">
+                    // retorna o array original
+                  </span>
+                </div>
+              </code>
+              </div>
+
+              <p>A melhor forma de se usar slice() é atribui-lo a uma nova variável.</p>
+          
+
+        </div>
+        <div class="quadro" >
+          <div class="exemplo">
+            
+            <code>
+              
+              <span class="keyword">Let </span>mensagem
+              <span class="operador"> = </span>
+              <span class="string">'Congratulations'</span>
+              <br>
+              <span class="keyword">Const </span>abbrv
+              <span class="operador"> = </span>
+              <span>mensagem.</span>
+              <span class="function">splice </span>
+              <span class="pontuacao">(</span>
+              <span class="numero">0</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">7</span>
+              <span class="pontuacao">)</span>
+              <span class="operador"> + </span>
+              <span class="string">'s!'</span>
+              <span class="pontuacao">;</span>
+              <br>
+              console.
+              <span class="function">log</span>
+              <span class="pontuacao">(</span>
+              abbrv
+              <span class="pontuacao">)</span>
+              <span class="console">
+                // retorna "congrats!" (forma abreviada de Congratulations)
+              </span>
+              
+            </code>
+          </div>
+        </div>
+        
+        <!------------------------------------ SPLIT ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="split" data-anime="animation">Split( )</h3>
+            <p>Este método é usado para strings. Ele divide uma string em substrings e as retorna como um array.</p>
+          </div>
+          <p>A sintaxe é: string.split(separador, limite);</p>
+          <div>
+            <ul>
+              <li>O separador aqui define como dividir uma string, por vírgula ou outro separador.</li>
+              <li>O limite determina o número de divisões que devem ser realizadas</li>
+            </ul>
+          </div>
+          <div class="quadro" >
+
+              <code>
+                
+                <span class="keyword">Let </span>nome
+                <span class="operador"> = </span>
+                <span class="string">'Ericsson'</span>
+                <br>
+                <span class="console">
+                  // retorna a string como um array
+                </span>
+                <br>
+                <span>nome.</span>
+                <span class="function">split </span>
+                <span class="pontuacao">(</span>
+                <span class="pontuacao">)</span>
+                <span class="pontuacao">;</span>
+                <span class="console">
+                  // ["Ericsson"]
+                </span>
+              </code>
+          </div>
+          
+          <p>Outro exemplo:
+
+              <div class="quadro" >
+    
+                  <code>
+                    
+                    <span class="keyword">Let </span>nome
+                    <span class="operador"> = </span>
+                    <span class="string">'Olá, meu nome é Ericsson, e eu sou desenvolvedor.';</span>
+                    <br>
+                    <br>
+                    <span>nome.</span>
+                    <span class="function">split </span>
+                    <span class="pontuacao">(</span>
+                    <span class="string">","</span>
+                    <span class="pontuacao">,</span>
+                    <span class="numero">2</span>
+                    <span class="pontuacao">)</span>
+                    <span class="pontuacao">;</span>
+                    <span class="console">
+                      // ["Olá", " meu nome é Walter white"]
+                    </span>
+                  </code>
+              </div>
+              <p class="obs">Observação: se declararmos um array vazio, como nome,split('');, cada item da string será dividido em substrings:</p>
+              <div class="quadro" >
+    
+                  <code>
+                    
+                    <span class="keyword">Let </span>nome
+                    <span class="operador"> = </span>
+                    <span class="string">'Testando';</span>
+                    <br>
+                    <br>
+                    <span>nome.</span>
+                    <span class="function">split </span>
+                    <span class="pontuacao">(</span>
+                    <span class="pontuacao">)</span>
+                    <span class="pontuacao">;</span>
+                    <span class="console">
+                      // ["T", "e", "s", "t", "a", "n", "d", "o"]
+                    </span>
+                  </code>
+              </div>
+            </div>
+            <!------------------------------------ IndexOf ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="indexOf" data-anime="animation">IndexOf( )</h3>
+            <p>Este método procura por um item em um array e retorna o índice onde ele foi encontrado. Do contrário, ele retorna -1</p>
+          </div>
+
+            <div class="quadro" >
+    
+              <code>
+                
+                <span class="keyword">Let </span>fruta
+                <span class="operador"> = </span>
+                <span class="pontuacao">[</span>
+                <span class="string">'maça'</span>
+                <span class="pontuacao">,</span>
+                <span class="string">'laranja'</span>
+                <span class="pontuacao">,</span>
+                <span class="numero">2</span>
+                <span class="pontuacao">]</span>
+                <br>
+                <span>fruta.</span>
+                <span class="function">indexOf </span>
+                <span class="pontuacao">(</span>
+                <span class="string">'laranja'</span>
+                <span class="pontuacao">)</span>
+                <span class="pontuacao">;</span>
+                <span class="console">
+                  // retorna 1
+                </span>
+                <br>
+                <span>fruta.</span>
+                <span class="function">indexOf </span>
+                <span class="pontuacao">(</span>
+                <span class="numero">2</span>
+                <span class="pontuacao">)</span>
+                <span class="pontuacao">;</span>
+                <span class="console">
+                  // retorna 2
+                </span>
+                <br>
+                <span>fruta.</span>
+                <span class="function">indexOf </span>
+                <span class="pontuacao">(</span>
+                <span class="string">null</span>
+                <span class="pontuacao">)</span>
+                <span class="pontuacao">;</span>
+                <span class="console">
+                  // retorna -1 (não encontrado)
+                </span>
+              </code>
+          </div>
+         </div>
+         <!------------------------------------ LastIndexOf ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="lastIndexOf" data-anime="animation">LastIndexOf( )</h3>
+            <p>Este método funciona da mesma forma que indexOf(), com a exceção de que ele funciona da direita para a esquerda. Ele retorna o último índice onde o item foi encontrado.</p>
+          </div>
+          
+          <div class="quadro" >
+    
+          <code>
+            
+            <span class="keyword">Let </span>fruta
+            <span class="operador"> = </span>
+            <span class="pontuacao">[</span>
+            <span class="string">'maça'</span>
+            <span class="pontuacao">,</span>
+            <span class="string">'laranja'</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">2</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">7</span>
+            <span class="pontuacao">,</span>
+            <span class="string">"manga"</span>
+            <span class="pontuacao">]</span>
+            <br>
+            <span>fruta.</span>
+            <span class="function">lastIndexOf </span>
+            <span class="pontuacao">(</span>
+            <span class="string">'laranja'</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+            <span class="console">
+              // retorna 3
+            </span>
+          </code>
+        </div>
+      </div>
+        <!------------------------------------ Filter ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="filter" data-anime="animation">Filter( )</h3>
+            <p>Este método cria um array se os itens de um array passarem em determinado teste de condição.</p>
+          </div>
+          <p>A sintaxe é:</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Let </span>resultado
+              <span class="operador"> = </span>
+              <span>array.</span>
+              <span class="function">filter</span>
+              <span class="pontuacao">(</span>
+              <span>function</span>
+              <span class="pontuacao">(</span>
+              <span>item</span>
+              <span>indice</span>
+              <span>array</span>
+              <span class="pontuacao">)</span>
+            <span class="pontuacao">{</span>
+            <br>
+            <span class="console">
+              // retorna true se o item passar no teste do filtro
+            </span>
+            <br>
+            <span class="pontuacao">}</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+          </code>
+        </div>
+      <p>Exemplo:</p>
+      <p>Verificar usuários que são da Nigéria</p>
+      <div class="quadro" >
+        
+        <code>
+          
+          <span class="keyword">Const </span>countryCode
+          <span class="operador"> = </span>
+          <span class="pontuacao">[</span>
+          <span class="string">'+234'</span>
+          <span class="string">'+144'</span>
+          <span class="string">'+233'</span>
+          <span class="string">'+234'</span>
+          <span class="pontuacao">]</span>
+          
+          <br>
+          
+          <span class="keyword">Const </span>nigerianos
+          <span class="operador"> = </span>
+          <span>countryCode</span>
+          <span class="function">filter</span>
+          <span class="pontuacao">(</span>
+          <span>code</span>
+          <span class="operador">=></span>
+          <span>code</span>
+          <span class="operador">===</span>
+          <span class="string">'+234'</span>
+          <span class="pontuacao">)</span>
+          <span class="pontuacao">;</span>
+          <br>
+          console.
+          <span class="function">log</span>
+          <span class="pontuacao">(</span>
+          nigerianos
+          <span class="pontuacao">)</span>
+          <span class="pontuacao">;</span>
+          
+          <span class="console">
+            // ["+234", "+234"]
+          </span>
+      </code>
+    </div>  
+  </div>
+        <!------------------------------------ Map ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="map" data-anime="animation">Map( )</h3>
+            <p>Este método cria um array manipulando valores de outro array.</p>
+          </div>
+          <p>Exemplo:</p>
+          <p>Exibir nomes de usuário em uma página (Exibição básica de uma lista de amigos)</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Const </span>userNames
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">'tina'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'danny'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'mark'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'michael'</span>
+              <span class="pontuacao">]</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="keyword">Const </span>display
+              <span class="operador"> = </span>
+              <span>userNames.</span>
+              <span class="function">map</span>
+              <span class="pontuacao">(</span>
+              <span>item</span>
+              <span class="operador"> => </span>
+              <span class="pontuacao">{</span>
+              <span class="pontuacao">)</span>
+              <br>
+              <span>Return</span>
+              <span class="string">'li'</span>
+              <span class="operador"> + </span>
+              <span>item</span>
+              <span class="operador"> + </span>
+              <span class="string">'li'</span>
+              <br>
+              <span class="pontuacao">}</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="keyword">Const </span>render
+              <span class="operador"> = </span>
+              <span class="string">'ul'</span>
+              <span class="operador"> + </span>
+              <span>display.</span>
+              <span class="function">join</span>
+              <span class="pontuacao">(</span>
+              <span class="string">''</span>
+              <span class="pontuacao">)</span>
+              <span class="operador"> + </span>
+              <span class="string">'ul'</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span>document.</span>
+              <span class="function">write</span>
+              <span class="pontuacao">(</span>
+              <span>render</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+
+          </code>
+        </div>
+        <div class="group">
+          <ul>
+            <li>tina</li>
+            <li>danny</li>
+            <li>mark</li>
+            <li>michael</li>
+          </ul>
+        </div>
+
+        <p>Outro exemplo:</p>
+
+        <div class="quadro" >
+          
+          <code>
+            
+            <span class="console">// adicionar cifrão a todos os números</span>
+            <br>
+            <span class="keyword">Const </span>numeros
+            <span class="operador"> = </span>
+            <span class="pontuacao">[</span>
+            <span class="numero">10</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">3</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">4</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">6</span>
+            <span class="pontuacao">]</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span class="keyword">Const </span>dolares
+            <span class="operador"> = </span>
+            <span>numeros.</span>
+            <span class="function">map</span>
+            <span class="pontuacao">(</span>
+            <span>numeros</span>
+            <span class="operador"> => </span>
+            <span class="string">'$'</span>
+            <span class="operador"> + </span>
+            <span>numeros</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span>Console.</span>
+            <span class="function">log</span>
+            <span class="pontuacao">(</span>
+            <span>dolares</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span class="console">// ['$10', '$3', '$4', '$6'];</span>
+
+        </code>
+      </div>
+      </div>
+      
+        <!------------------------------------ Reduce ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="reduce" data-anime="animation">Reduce( )</h3>
+            <p>Este método é bom para o cálculo de totais.</p>
+          </div>
+          <p>reduce() é usado para calcular um único valor com base em um array.</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Let </span>value
+              <span class="operador"> = </span>
+              <span>array</span>
+              <span class="function">reduce</span>
+              <span class="pontuacao">(</span>
+              <span>function</span>
+              <span class="pontuacao">(</span>
+              <span>valorAnterior</span>
+              <span class="pontuacao">,</span>
+              <span >item</span>
+              <span class="pontuacao">,</span>
+              <span >indice</span>
+              <span class="pontuacao">,</span>
+              <span >array</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">{</span>
+              <br>
+              <span class="console"> // ...</span>
+              <br>
+              <span class="operador">}</span>
+              <span class="pontuacao">,</span>
+              <span>inicial</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+
+          </code>
+        </div>
+
+        <p>Exemplo:</p>
+
+        <p class="obs">Para percorrer um array e somar todos os números desse array, podemos usar o laço for of.</p>
+
+        <div class="quadro" >
+          
+          <code>
+            
+            <span class="keyword">Const </span>numeros
+            <span class="operador"> = </span>
+            <span class="pontuacao">[</span>
+            <span class="numero">100</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">300</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">500</span>
+            <span class="pontuacao">,</span>
+            <span class="numero">70</span>
+            <span class="pontuacao">]</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span class="keyword">Let </span>soma
+            <span class="operador"> = </span>
+            <span class="numero">0</span>
+            <br>
+            <span class="keyword">for</span>
+            <span class="pontuacao">(</span>
+            <span class="keyword">let</span>
+            <span> n </span>
+            <span class="keyword">of</span>
+            <span>numeros</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">{</span>
+              <br>
+              <span>soma</span>
+              <span class="operador">+=</span>
+            <span>n</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span class="pontuacao">}</span>
+            <br>
+            <span>console.</span>
+            <span class="function">log</span>
+            <span class="pontuacao">(</span>
+            <span>soma</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+            
+        </code>
+      </div>
+      <p>Aqui vemos como fazer o mesmo com reduce()</p>
+      <div class="quadro" >
+        
+        <code>
+          
+          <span class="keyword">Const </span>numeros
+          <span class="operador"> = </span>
+          <span class="pontuacao">[</span>
+          <span class="numero">100</span>
+          <span class="pontuacao">,</span>
+          <span class="numero">300</span>
+          <span class="pontuacao">,</span>
+          <span class="numero">500</span>
+          <span class="pontuacao">,</span>
+          <span class="numero">70</span>
+          <span class="pontuacao">]</span>
+          <span class="pontuacao">;</span>
+          <br>
+          <span class="keyword">Const </span>soma
+          <span class="operador"> = </span>
+          <span >numeros</span>
+          <span class="pontuacao">.</span>
+          <span class="function">reduce</span>
+          <span class="pontuacao">(</span>
+          <span class="pontuacao">(</span>
+          <span >acumulador</span>
+          <span class="pontuacao">,</span>
+          <span>valor</span>
+          <span class="pontuacao">)</span>
+          <span class="operador">=></span>
+          <br>
+          <span>acumulador</span>
+          <span class="operador">+</span>
+          <span >valor</span>
+            <br>
+            <span class="pontuacao">,</span>
+          <span class="numero">0</span>
+          <span class="pontuacao">)</span>
+          <span class="pontuacao">;</span>
+          <br>
+          <span>console.</span>
+          <span class="function">log</span>
+          <span class="pontuacao">(</span>
+          <span>soma</span>
+          <span class="pontuacao">)</span>
+          <span class="pontuacao">;</span>
+          <span class="console"> // 970</span>
+          
+      </code>
+    </div>
+    <p class="obs">Ao omitir o valor inicial, o total iniciará por padrão do primeiro item do array.</p>
+    <div class="quadro" >
+      
+      <code>
+        
+        <span class="keyword">Const </span>numeros
+        <span class="operador"> = </span>
+        <span class="pontuacao">[</span>
+        <span class="numero">100</span>
+        <span class="pontuacao">,</span>
+        <span class="numero">300</span>
+        <span class="pontuacao">,</span>
+        <span class="numero">500</span>
+        <span class="pontuacao">,</span>
+        <span class="numero">70</span>
+        <span class="pontuacao">]</span>
+        <span class="pontuacao">;</span>
+        <br>
+        <span class="keyword">Const </span>soma
+        <span class="operador"> = </span>
+        <span >numeros</span>
+        <span class="pontuacao">.</span>
+        <span class="function">reduce</span>
+        <span class="pontuacao">(</span>
+        <span class="pontuacao">(</span>
+        <span >acumulador</span>
+        <span class="pontuacao">,</span>
+        <span>valor</span>
+        <span class="pontuacao">)</span>
+        <span class="operador">=></span>
+        <span>acumulador</span>
+        <span class="operador">+</span>
+        <span >valor</span>
+        <span class="pontuacao">)</span>
+        <span class="pontuacao">;</span>
+        <br>
+        <span>console.</span>
+        <span class="function">log</span>
+        <span class="pontuacao">(</span>
+        <span>soma</span>
+        <span class="pontuacao">)</span>
+        <span class="pontuacao">;</span>
+        <span class="console"> // retorna 970 do mesmo modo</span>
+        
+    </code>
+  </div>
+  </div>
+      
+        <!------------------------------------ forEach ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="forEach" data-anime="animation">ForEach( )</h3>
+            <p>Este método é bom para a iteração por meio de um array.</p>
+          </div>
+          <p>Ele aplica uma função a todos os itens de um array</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Const </span>cores
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">verde</span>
+              <span class="pontuacao">,</span>
+              <span class="string">amarelho</span>
+              <span class="pontuacao">,</span>
+              <span class="string">azul</span>
+              <span class="pontuacao">]</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span>cores.</span>
+              <span class="function">forEach</span>
+              <span class="pontuacao">(</span>
+              <span class="pontuacao">(</span>
+              <span >item</span>
+              <span class="pontuacao">,</span>
+              <span >indice</span>
+              <span class="pontuacao">)</span>
+              <span class="operador">=></span>
+              <span >console</span>
+              <span class="function">log</span>
+              <span class="pontuacao">(</span>
+              <span >item</span>
+              <span class="pontuacao">,</span>
+              <span >indice</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="console">// retorna os índices e os itens de um array</span>
+              <br>
+              <span class="console">// 0 "verde"</span>
+              <br>
+              <span class="console">// 1 "amarelo"</span>
+              <br>
+              <span class="console">// 2 "azul"</span>
+          
+
+          </code>
+        </div>
+        
+        <p>A iteração pode ser feita sem passar o argumento índice</p>
+
+        <div class="quadro" >
+          
+          <code>
+            
+            <span class="keyword">Const </span>cores
+            <span class="operador"> = </span>
+            <span class="pontuacao">[</span>
+            <span class="string">verde</span>
+            <span class="pontuacao">,</span>
+            <span class="string">amarelho</span>
+            <span class="pontuacao">,</span>
+            <span class="string">azul</span>
+            <span class="pontuacao">]</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span>cores.</span>
+            <span class="function">forEach</span>
+            <span class="pontuacao">(</span>
+            <span class="pontuacao">(</span>
+            <span >item</span>
+            <span class="pontuacao">)</span>
+            <span class="operador">=></span>
+            <span >console</span>
+            <span class="function">log</span>
+            <span class="pontuacao">(</span>
+            <span >item</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">)</span>
+            <span class="pontuacao">;</span>
+            <br>
+            <span class="console">// retorna todos os itens do array</span>
+            <br>
+            <span class="console">// 0 "verde"</span>
+            <br>
+            <span class="console">// 1 "amarelo"</span>
+            <br>
+            <span class="console">// 2 "azul"</span>
+        
+
+        </code>
+      </div>
+  </div>
+      
+        <!------------------------------------ Every ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="every" data-anime="animation">Every( )</h3>
+            <p>Este método verifica se todos os itens de um array passam a condição especificada e retornam true se o teste passar, ou false do contrário.</p>
+          </div>
+          <p class="obs" >verifica se todos os números são positivos</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Const </span>numeros
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="numero">1</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">-1</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">2</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">3</span>
+              <span class="pontuacao">]</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="keyword">Let </span>todosPositivos
+              <span class="operador">=</span>
+              <span >numeros.</span>
+              <span class="function">every</span>
+              <span class="pontuacao">(</span>
+              <span class="pontuacao">(</span>
+              <span >valor</span>
+              <span class="pontuacao">)</span>
+              <span class="operador">=></span>
+              <span class="pontuacao">{</span>
+              <br>
+              <span class="keyword">return</span>
+              <span >valor</span>
+              <span class="operador">=></span>
+              <span class="number">0</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="pontuacao">}</span>
+              <span class="pontuacao">)</span>
+              <br>
+              <span >console.</span>
+              <span class="function">log</span>
+              <span class="pontuacao">(</span>
+              <span >todosPositivos</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+              <span class="console">// retornaria false</span>
+          
+
+          </code>
+        </div>
+  </div>
+      
+        <!------------------------------------ Some ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="some" data-anime="animation">Some( )</h3>
+            <p>Este método verifica se um item (um ou mais) de um array passa(m) a condição especificada e retornam true se o teste passar, ou false do contrário.</p>
+          </div>
+          <p class="obs" >verifica se todos os números são positivos</p>
+          
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Const </span>numeros
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="numero">1</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">-1</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">2</span>
+              <span class="pontuacao">,</span>
+              <span class="numero">3</span>
+              <span class="pontuacao">]</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="keyword">Let </span>aoMenosUmPositivo
+              <span class="operador">=</span>
+              <span >numeros.</span>
+              <span class="function">some</span>
+              <span class="pontuacao">(</span>
+              <span class="pontuacao">(</span>
+              <span >valor</span>
+              <span class="pontuacao">)</span>
+              <span class="operador">=></span>
+              <span class="pontuacao">{</span>
+              <br>
+              <span class="keyword">return</span>
+              <span >valor</span>
+              <span class="operador">=></span>
+              <span class="number">0</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span class="pontuacao">}</span>
+              <span class="pontuacao">)</span>
+              <br>
+              <span >console.</span>
+              <span class="function">log</span>
+              <span class="pontuacao">(</span>
+              <span >aomenosumPositivos</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+              <span class="console">// retornaria true</span>
+          
+
+          </code>
+        </div>
+  </div>
+      
+        <!------------------------------------ Includes ------------------------------------->  
+        
+        <div class="conteudo">
+          <div class="metodo">
+            <h3 id="includes" data-anime="animation">Includes( )</h3>
+            <p>Este método verifica se um array contém determinado item. É semelhante a .some(), porém em vez de buscar uma condição específica para passar, ele verifica se o array contém um item específico.</p>
+          </div>
+          <div class="quadro" >
+            
+            <code>
+              
+              <span class="keyword">Let </span>usuarios
+              <span class="operador"> = </span>
+              <span class="pontuacao">[</span>
+              <span class="string">'paddy'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'zaddy'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'faddy'</span>
+              <span class="pontuacao">,</span>
+              <span class="string">'baddy'</span>
+              <span class="pontuacao">]</span>
+              <span class="pontuacao">;</span>
+              <br>
+              <span >usuarios.</span>
+              <span class="function">includes</span>
+              <span class="pontuacao">(</span>
+              <span class="string">'baddy'</span>
+              <span class="pontuacao">)</span>
+              <span class="pontuacao">;</span>
+              <span class="console">// retorna true</span>
+          </code>
+        </div>
+        <p>Se o item não fosse encontrado, retornaria false</p>
+  </div>
+      
+      
+    </section>
+    
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
